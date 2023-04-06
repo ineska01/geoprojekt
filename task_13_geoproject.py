@@ -24,3 +24,4 @@ class CountGeo:
 result_counting_poligon = CountGeo(geojson_path)
 result_counting_poligon.load_geojson()
 result_counting_poligon.loaded_geojson
+result_counting_poligon.get_data()
