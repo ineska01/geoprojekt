@@ -1,9 +1,13 @@
+import geopandas as gpd
+geojson_path = "sciezka_do_mojego_geojsona"
+
 class CountGeo:
-    def __init__(self):
-        pass
+    def __init__(self, path):
+        self.path = path
+        self.loaded_geojson = None
     
     def load_geojson(self):
-        pass
+        self.loaded_geojson = gpd.read_file(self.path)
     
     def count_area(self):
         pass
@@ -12,10 +16,11 @@ class CountGeo:
         pass
     
     def get_data(self):
-        area = count_area()
-        circuit = count_circuit()
+        area = self.count_area()
+        circuit = self.count_circuit()
         
         return area, circuit
     
-poligon = CountGeo()
-print(poligon.get_date())
+result_counting_poligon = CountGeo(geojson_path)
+result_counting_poligon.load_geojson()
+result_counting_poligon.loaded_geojson
